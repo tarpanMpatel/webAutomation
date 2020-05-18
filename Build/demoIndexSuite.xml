@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Demo Test Modukle" verbose="10" parallel="tests" thread-count="5">
+
+	<!-- Put IP of localhost/Grid Hub machine -->
+	<parameter name="selenium.host" value="localhost" />
+
+	<!-- Put Port of localhost RC/Grid Hub machine -->
+	<parameter name="selenium.port" value="4444" />
+
+	<!-- Put target browser name as below: 1) Firefox : firefox 2) chrome : chrome 3) IExplorer : ie8 / ie9 ; browserstack -->
+
+	<parameter name="selenium.browser" value="chrome" />
+	<!-- <parameter name="browserstack.browser" value="chrome" /> --> 				<!-- Browserstack's Browser -->
+	<!-- <parameter name="execution.env" value="remote" /> -->      				<!--  local = execute on localhost else on Remote url-->
+	
+	
+	<listeners>
+        <listener class-name="com.utilities.CustomReporterEmailBuildSummary"/>
+        <listener class-name="com.utilities.CustomReporterforEmail"/>
+        <listener class-name="com.utilities.CustomReporterTestFailureDetails"/>
+        <listener class-name="com.utilities.CustomReporterListener"/>
+    </listeners>
+
+
+ 	 <test name=" TC_KQ_01 :: To verify 'KiwiQA Home Page dispalyed' .">
+		<classes>
+			<class name="com.demo.homePage.HomeIndex">
+				<methods>
+					<include name="requestCallBack" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+</suite>

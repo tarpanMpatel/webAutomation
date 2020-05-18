@@ -1,0 +1,8 @@
+# JDT-specific
+.classpath
+
+# Eclipse Core      
+.project
+.settings/
+target/
+test-output
